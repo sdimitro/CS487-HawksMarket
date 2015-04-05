@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the final project for CS487-Software Engineering @IIT (2015).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**Members:**
+- Denis Bajic
+- Lohengrin Mindiola Diaz
+- Serapheim Dimitropoulos
+- Meagan Lenoir
