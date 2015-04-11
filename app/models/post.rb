@@ -1,4 +1,7 @@
 class Post < ActiveRecord::Base
+  # To add taging (should be refactored to new style)
+  acts_as_taggable
+
   # Use friendly_id
   extend FriendlyId
   friendly_id :title, use: :slugged
