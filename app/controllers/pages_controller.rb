@@ -9,8 +9,12 @@ class PagesController < ApplicationController
   def inside
   end
   
-def posts
-    @posts = Post.published.page(params[:page]).per(10)
+  def posts
+    if params[:tag]
+      @posts = Post.published.tagged_with(params[:tag]).page(params[:page]).per(10)
+    else
+      @posts = Post.published.page(params[:page]).per(10)
+    end
   end
   
   def show_post

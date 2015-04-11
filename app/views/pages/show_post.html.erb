@@ -8,6 +8,6 @@
 
 
   <% if @post.tags.any? %>
-    <small>tags: <%= @post.tags.join(",") %></small>
+    <small>tags: <%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></small>
   <% end %>
 </div>
