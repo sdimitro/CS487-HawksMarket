@@ -66,7 +66,8 @@ class Admin::PostsController < Admin::BaseController
     :content_md,
     :draft,
     :updated_at,
-    :tag_list
+    :tag_list,
+    :photo
     )
   end
 

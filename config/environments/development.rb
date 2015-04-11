@@ -38,4 +38,7 @@ Hawksmarket::Application.configure do
     user_name: ENV["SMTP_USER"],
     password: ENV["SMTP_PWD"]
   }
+
+  # Paperclip
+  Paperclip.options[:command_path] = '/usr/bin/'
 end
