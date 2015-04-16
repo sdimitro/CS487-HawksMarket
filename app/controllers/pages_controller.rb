@@ -12,6 +12,8 @@ class PagesController < ApplicationController
   def posts
     if params[:tag]
       @posts = Post.published.tagged_with(params[:tag]).page(params[:page]).per(10)
+    elsif params[:search]
+      @posts = Post.published.search(params[:search]).page(params[:page]).per(10)
     else
       @posts = Post.published.page(params[:page]).per(10)
     end

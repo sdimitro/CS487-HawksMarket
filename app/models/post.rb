@@ -34,4 +34,10 @@ class Post < ActiveRecord::Base
     .order("updated_at DESC")
   }
 
+  # Searchable
+  def self.search(search)
+    search_condition = "%" + search + "%"
+    where('title LIKE ? OR content_md LIKE ?', search_condition, search_condition)
+  end
+
 end
