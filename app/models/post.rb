@@ -1,5 +1,9 @@
 class Post < ActiveRecord::Base
-  # To add taging (should be refactored to new style)
+  # Paperclip - Picture Uploads
+  has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
+
+  # Act As Taggable - To add taging
   acts_as_taggable
 
   # Use friendly_id
@@ -29,5 +33,11 @@ class Post < ActiveRecord::Base
     where(draft: true)
     .order("updated_at DESC")
   }
+
+  # Searchable
+  def self.search(search)
+    search_condition = "%" + search + "%"
+    where('title LIKE ? OR content_md LIKE ?', search_condition, search_condition)
+  end
 
 end

@@ -1,2 +1,17 @@
 <% title("Home Page") %>
-<h1><i class="fa fa-home"></i> Home Page <small>views/pages/home.html.erb</small></h1>
+<div class="jumbotron">
+  <div class="container">
+    <h1><i class="fa fa-home"></i>Hawks Market</h1>
+    <p>Welcome to Hawks Market! Create posts for things you want to sell within the IIT community!</p>
+    <%= link_to "View Current Posts", posts_path, class: "btn btn-primary btn-large" %>
+  </div>
+</div>
+
+<% if Post.tag_counts.any? %>
+  <h3> Current Tags: </h3>
+  <div id="tag_cloud">
+    <% tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class| %>
+      <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+    <% end %>
+  </div>
+<% end %>
