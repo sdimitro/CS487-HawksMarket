@@ -13,8 +13,12 @@ has_many :posts
 
   # Validations
   # :email
+<<<<<<< HEAD
    #validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
    validates_format_of :email, with: /\b(?:(?![_.-])(?!.*[_.-]{2})[a-z0-9_.-]+(?<![_.-]))@(?:(?!-)(?!.*--)[a-z0-9-]+(?<!-)\.)*iit\.edu\b/i
+=======
+  validates_format_of :email, with: /\A([^@\s]+)@(?:hawk.){0,1}iit\.edu\Z/i
+>>>>>>> upstream/master
 
   def self.paged(page_number)
     order(admin: :desc, email: :asc).page page_number
