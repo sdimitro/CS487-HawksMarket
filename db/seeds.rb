@@ -3,7 +3,7 @@
 
 # Temporary admin account
 u = User.new(
-    email: "admin@example.com",
+    email: "hawksmarket@iit.edu",
     password: "1234",
     admin: true
 )

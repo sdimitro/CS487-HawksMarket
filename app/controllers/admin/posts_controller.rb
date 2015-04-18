@@ -64,6 +64,7 @@ class Admin::PostsController < Admin::BaseController
     params.require(:post).permit(
     :title,
     :content_md,
+    :price,
     :draft,
     :updated_at,
     :tag_list,

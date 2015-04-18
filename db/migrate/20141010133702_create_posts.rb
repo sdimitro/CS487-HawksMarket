@@ -4,6 +4,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :title
       t.text :content_md
       t.text :content_html
+      t.text :price
       t.boolean :draft, default: false
       t.integer :user_id
 

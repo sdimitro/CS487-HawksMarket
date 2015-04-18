@@ -1,0 +1,42 @@
+Configuring SMTP
+=================
+
+- Why do I need that?
+
+So users can sign up and visitors can use the contact
+form.
+
+- Whatever! Make this quick...
+
+Go to config/application.yml and you should see
+something like this:
+
+```
+DOMAIN: "example.com"
+SENDER_EMAIL: "user@example.com"
+MAILER_DOMAIN: "example.com"
+SMTP_SERVER: "smtp.example.com"
+SMTP_PORT: "587"
+SMTP_USER: "user"
+SMTP_PWD: "pass"
+```
+
+For now, we'll be doing the testing using a singe gmail
+account to handle everything. So the above variables
+like the example below should work.
+
+```
+DOMAIN: "gmail.com"
+SENDER_EMAIL: "hawksmarket@gmail.com"
+MAILER_DOMAIN: "gmail.com"
+SMTP_SERVER: "smtp.gmail.com"
+SMTP_PORT: "587"
+SMTP_USER: "hawksmarket"
+SMTP_PWD: "blahblah"
+```
+
+
+Notes:
+* Ask @sdimitro or any other collaborator for the test account credentials.
+* If you want to use any other gmail account for testing you need to enable IMAP.
+* The application.yml file is ignored by git so don't worry about uploading credentials by mistake.
