@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   end
 
   def inside
+    @posts = Post.friendly.where(user_id: current_user)
   end
   
   def posts
