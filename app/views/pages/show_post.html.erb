@@ -12,10 +12,11 @@
         <%= image_tag @post.photo.url %>
   <% end %>
 
-    <strong>Description: </strong><%= @post.content_html.html_safe %>
+  <strong>Description: </strong><%= @post.content_html.html_safe %>
+
+  <strong>Price: </strong>$<%= number_with_precision(@post.price, :precision =>2) %><br>
 
   <% if @post.tags.any? %>
-
       <strong>Tags:</strong> <%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
   <% end %>
 </div>
