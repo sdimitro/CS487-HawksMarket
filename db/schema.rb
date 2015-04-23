@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150411163933) do
     t.string   "title"
     t.text     "content_md"
     t.text     "content_html"
+    t.float  "price"
     t.boolean  "draft",              default: false
     t.integer  "user_id"
     t.string   "slug"

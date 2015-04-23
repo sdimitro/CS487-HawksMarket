@@ -13,6 +13,7 @@ has_many :posts
 
   # Validations
   # :email
+
   validates_format_of :email, with: /\A([^@\s]+)@(?:hawk.){0,1}iit\.edu\Z/i
 
   def self.paged(page_number)
