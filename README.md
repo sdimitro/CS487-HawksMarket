@@ -38,7 +38,7 @@ The benefits over the existing methods are the following:
 
 ###**Final Note:**
 HawksMarket is only there to make a connection between a potential buyer and a seller.
-No actual transaction can take place on the website. The two ends are suppose to meet
+No actual transaction can take place on the website. The two ends are supposed to meet
 after the connection has been made. As a result, we are not responsible for anything
 that happens during the actual transaction. Also, keep in mind that only public
 information are shared through the website. Basically, no more than what is available
