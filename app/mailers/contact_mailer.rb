@@ -3,11 +3,11 @@ class ContactMailer < ActionMailer::Base
   default from: ENV["SENDER_EMAIL"]
 
 
-  def contact_message(name, email, message)
-    @name = name
+  def contact_message(email, item, message)
     @email = email
+    @item = item
     @message = message
 
-    mail to: ENV["SENDER_EMAIL"], subject: "New message received at #{ENV["DOMAIN"]}"
+    mail to: ENV["SENDER_EMAIL"], subject: "REPORT INQUIRY"
   end
 end

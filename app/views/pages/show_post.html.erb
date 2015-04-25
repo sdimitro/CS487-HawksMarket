@@ -19,5 +19,11 @@
   <% if @post.tags.any? %>
       <strong>Tags:</strong> <%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
   <% end %>
-</div>
+
+	<% if user_signed_in? %>
+		<br>
+		<br>
+		<%= link_to "Report",report_path(:item => @post.title), class: "btn btn-primary btn-large" %>
+	<% end %>
+	</div>
 </div>
