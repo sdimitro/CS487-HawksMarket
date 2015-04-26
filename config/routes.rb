@@ -11,6 +11,8 @@ Hawksmarket::Application.routes.draw do
   get "posts", to: "pages#posts", as: "posts"
   get "posts/:id", to: "pages#show_post", as: "post"
 
+	resources :interest_posts, only: [:create, :destroy]
+
   devise_for :users
 
   namespace :admin do

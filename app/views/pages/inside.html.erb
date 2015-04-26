@@ -13,6 +13,12 @@
 	</div>
 	<div class="col-sm-4">
 		<h3>My Wishlist</h3>
+		<% @wishlist_posts.each do |wpost| %>
+		   <li class="margin-md-down">
+		     <%= link_to wpost.title, post_path(wpost.slug) %>
+		     <small class="x-small-text"> - <%= time_ago_in_words(wpost.updated_at) %> ago</small>
+		   </li>
+		   <% end %>
 	</div>
 	<div class="col-sm-4">
 		<h3>Actions</h3>

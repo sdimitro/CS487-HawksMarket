@@ -7,6 +7,12 @@ class PagesController < ApplicationController
   end
 
   def inside
+    @wishlist_posts = []
+    wishlist = Interest.where(user_id: current_user)
+    wishlist.each do |t|
+     @wishlist_posts << Post.friendly.find(t.interested_id)
+    end
+	
     @posts = Post.friendly.where(user_id: current_user)
   end
   

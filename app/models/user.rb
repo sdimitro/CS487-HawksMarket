@@ -1,7 +1,11 @@
 class User < ActiveRecord::Base
   
-# Relations
-has_many :posts
+  # Relations
+  has_many :posts
+
+  # Interests
+  has_many :interests
+  has_many :interest_posts, through: :interests, source: :interested, source_type: 'Post'
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

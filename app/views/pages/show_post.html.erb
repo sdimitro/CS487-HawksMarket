@@ -23,6 +23,11 @@
 	<% if user_signed_in? %>
 		<br>
 		<br>
+		<%- unless current_user.interest_posts.exists?(id: @post.id) -%>
+			<%= link_to 'Add to Wishlist', interest_posts_path(post_id: @post.id), method: :post, class: "btn btn-primary btn-large" %>
+		<%- else -%>
+			<%= link_to 'Remove from Wishlist', interest_post_path(@post), method: :delete, class: "btn btn-primary btn-large" %>
+		<%- end -%>
 		<%= link_to "Report",report_path(:item => @post.title), class: "btn btn-primary btn-large" %>
 	<% end %>
 	</div>
