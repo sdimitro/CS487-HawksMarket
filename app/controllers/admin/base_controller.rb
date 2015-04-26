@@ -1,5 +1,5 @@
 class Admin::BaseController < ApplicationController
-  before_filter :require_admin!
+  before_filter :require_admin!, :only => [:dashboard, :index]
 
   def index
     @last_signups = User.last_signups(10)
